@@ -24,11 +24,11 @@ export const formateDate = (date) => {
     return (
       capitalizeFirstLetter(monthNames[date.getMonth()]) +
       " " +
-      date.getDate() +
+      (date.getDate() > 9 ? date.getDate() : "0" + date.getDate()) +
       ", " +
       date.getFullYear() +
       " " +
-      date.getHours() +
+      (date.getHours() > 9 ? date.getHours() : "0" + date.getHours()) +
       ":" +
       (date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes())
     );

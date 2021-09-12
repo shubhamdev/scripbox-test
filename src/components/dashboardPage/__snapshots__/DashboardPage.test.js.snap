@@ -18,6 +18,7 @@ exports[`DashboardPage component should render DashboardPage component correctly
         />
       </Divider>
       <List
+        bordered={true}
         dataSource={Array []}
         grid={
           Object {
@@ -25,7 +26,9 @@ exports[`DashboardPage component should render DashboardPage component correctly
             "gutter": 10,
           }
         }
+        loading={true}
         renderItem={[Function]}
+        size="small"
       >
         <Skeleton
           active={true}
@@ -58,6 +61,7 @@ exports[`DashboardPage component should render DashboardPage component correctly
         />
       </Divider>
       <List
+        bordered={true}
         dataSource={Array []}
         grid={
           Object {
@@ -65,7 +69,9 @@ exports[`DashboardPage component should render DashboardPage component correctly
             "gutter": 10,
           }
         }
+        loading={true}
         renderItem={[Function]}
+        size="small"
       >
         <Skeleton
           active={true}

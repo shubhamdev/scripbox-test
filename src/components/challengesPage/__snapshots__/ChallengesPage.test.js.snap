@@ -46,11 +46,6 @@ exports[`ChallengesPage component should render ChallengesPage component correct
         }
         name="challenge-from"
         onFinish={[Function]}
-        validateMessages={
-          Object {
-            "required": "\${label} is required!",
-          }
-        }
         wrapperCol={
           Object {
             "span": 20,
@@ -68,7 +63,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
-                "message": "Please confirm your password!",
+                "message": "Title is required",
                 "required": true,
               },
               Object {
@@ -94,6 +89,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
+                "message": "Tag is required",
                 "required": true,
               },
             ]
@@ -152,6 +148,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
+                "message": "Description is required",
                 "required": true,
               },
             ]
@@ -229,11 +226,6 @@ exports[`ChallengesPage component should render ChallengesPage component correct
         }
         name="challenge-from"
         onFinish={[Function]}
-        validateMessages={
-          Object {
-            "required": "\${label} is required!",
-          }
-        }
         wrapperCol={
           Object {
             "span": 20,
@@ -251,7 +243,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
-                "message": "Please confirm your password!",
+                "message": "Title is required",
                 "required": true,
               },
               Object {
@@ -277,6 +269,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
+                "message": "Tag is required",
                 "required": true,
               },
             ]
@@ -335,6 +328,7 @@ exports[`ChallengesPage component should render ChallengesPage component correct
           rules={
             Array [
               Object {
+                "message": "Description is required",
                 "required": true,
               },
             ]

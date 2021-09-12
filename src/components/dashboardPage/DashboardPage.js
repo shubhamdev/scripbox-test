@@ -8,6 +8,7 @@ import {
   Skeleton,
   message,
   Empty,
+  Tag,
   Tooltip,
   Comment,
   Avatar,
@@ -24,7 +25,7 @@ function DashboardPage() {
   // isLoading flag
   const [isLoading, setIsLoading] = useState(true);
   // Display test for sort order
-  const [sortOrder, setSortOrder] = useState("Sort Order");
+  const [sortOrder, setSortOrder] = useState("Sort By");
   // User details object
   const [loginUserName, setLoginUserName] = useState("");
 
@@ -141,17 +142,21 @@ function DashboardPage() {
           </Divider>
 
           <List
+            size="small"
+            loading={isLoading}
+            bordered={true}
             grid={{ gutter: 10, column: 3 }}
             dataSource={dashboardList}
             renderItem={(item) => (
               <List.Item key={item.title}>
                 <Card
+                  size="small"
+                  bordered={true}
                   title={item.title}
-                  bordered={false}
                   style={{ width: "300", color: "grey" }}
                 >
                   <p>{item.description}</p>
-                  {/* <p>{formateDate(item.createdDate)}</p> */}
+                  <Tag>{item.tag}</Tag>
                   <Comment
                     // actions={actions}
                     author={<a>{item.createdBy}</a>}
