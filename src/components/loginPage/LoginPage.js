@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Form, Input, Button } from "antd";
 import { Row, Col } from "antd";
-import { login } from "../../utils";
+import { login, isLogin } from "../../utils";
 import { PageContext } from "../../PageContextProvider";
 const layout = {
   labelCol: { span: 8 },
@@ -25,7 +25,11 @@ function LoginPage(props) {
   };
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (isLogin()) {
+      props.history.push("/dashboard");
+    } else {
+      inputRef.current.focus();
+    }
   }, []);
 
   return (
