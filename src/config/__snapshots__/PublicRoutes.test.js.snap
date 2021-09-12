@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PublicRoutes should render PublicRoutes correctly in "debug" mode 1`] = `
+<Route
+  debug={true}
+  render={[Function]}
+/>
+`;
+
+exports[`PublicRoutes should render PublicRoutes correctly with no props 1`] = `
+<Route
+  render={[Function]}
+/>
+`;

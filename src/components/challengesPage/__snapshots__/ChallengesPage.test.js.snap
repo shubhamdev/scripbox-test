@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChallengesPage component should render ChallengesPage component correctly in "debug" mode 1`] = `
+<div
+  className="site-card-wrapper"
+>
+  <Row
+    style={
+      Object {
+        "padding": "5%",
+      }
+    }
+  >
+    <Col
+      offset={0}
+      span={20}
+    >
+      <ForwardRef(InternalForm)
+        form={
+          Object {
+            "__INTERNAL__": Object {
+              "itemRef": [Function],
+            },
+            "getFieldError": [Function],
+            "getFieldInstance": [Function],
+            "getFieldValue": [Function],
+            "getFieldsError": [Function],
+            "getFieldsValue": [Function],
+            "getInternalHooks": [Function],
+            "isFieldTouched": [Function],
+            "isFieldValidating": [Function],
+            "isFieldsTouched": [Function],
+            "isFieldsValidating": [Function],
+            "resetFields": [Function],
+            "scrollToField": [Function],
+            "setFields": [Function],
+            "setFieldsValue": [Function],
+            "submit": [Function],
+            "validateFields": [Function],
+          }
+        }
+        labelCol={
+          Object {
+            "span": 8,
+          }
+        }
+        name="challenge-from"
+        onFinish={[Function]}
+        validateMessages={
+          Object {
+            "required": "\${label} is required!",
+          }
+        }
+        wrapperCol={
+          Object {
+            "span": 20,
+          }
+        }
+      >
+        <FormItem
+          label="Title"
+          name={
+            Array [
+              "challengeData",
+              "title",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "message": "Please confirm your password!",
+                "required": true,
+              },
+              Object {
+                "validator": [Function],
+              },
+            ]
+          }
+        >
+          <Input
+            autoComplete="off"
+            placeholder="Enter title"
+            type="text"
+          />
+        </FormItem>
+        <FormItem
+          label="Tag"
+          name={
+            Array [
+              "challengeData",
+              "tag",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "required": true,
+              },
+            ]
+          }
+        >
+          <ForwardRef(InternalSelect)
+            allowClear={true}
+            placeholder="Select a tag"
+          >
+            <Option
+              key="Front end"
+              value="Front end"
+            >
+              Front end
+            </Option>
+            <Option
+              key="Back end"
+              value="Back end"
+            >
+              Back end
+            </Option>
+            <Option
+              key="Elastic"
+              value="Elastic"
+            >
+              Elastic
+            </Option>
+            <Option
+              key="Nodejs"
+              value="Nodejs"
+            >
+              Nodejs
+            </Option>
+            <Option
+              key="React"
+              value="React"
+            >
+              React
+            </Option>
+            <Option
+              key="Angular"
+              value="Angular"
+            >
+              Angular
+            </Option>
+          </ForwardRef(InternalSelect)>
+        </FormItem>
+        <FormItem
+          label="Description"
+          name={
+            Array [
+              "challengeData",
+              "description",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "required": true,
+              },
+            ]
+          }
+        >
+          <ForwardRef
+            autoComplete="off"
+            placeholder="Enter description"
+          />
+        </FormItem>
+        <FormItem
+          wrapperCol={
+            Object {
+              "offset": 22,
+              "span": 20,
+            }
+          }
+        >
+          <Button
+            htmlType="submit"
+            type="primary"
+          >
+            Submit
+          </Button>
+        </FormItem>
+      </ForwardRef(InternalForm)>
+    </Col>
+  </Row>
+</div>
+`;
+
+exports[`ChallengesPage component should render ChallengesPage component correctly with no props 1`] = `
+<div
+  className="site-card-wrapper"
+>
+  <Row
+    style={
+      Object {
+        "padding": "5%",
+      }
+    }
+  >
+    <Col
+      offset={0}
+      span={20}
+    >
+      <ForwardRef(InternalForm)
+        form={
+          Object {
+            "__INTERNAL__": Object {
+              "itemRef": [Function],
+            },
+            "getFieldError": [Function],
+            "getFieldInstance": [Function],
+            "getFieldValue": [Function],
+            "getFieldsError": [Function],
+            "getFieldsValue": [Function],
+            "getInternalHooks": [Function],
+            "isFieldTouched": [Function],
+            "isFieldValidating": [Function],
+            "isFieldsTouched": [Function],
+            "isFieldsValidating": [Function],
+            "resetFields": [Function],
+            "scrollToField": [Function],
+            "setFields": [Function],
+            "setFieldsValue": [Function],
+            "submit": [Function],
+            "validateFields": [Function],
+          }
+        }
+        labelCol={
+          Object {
+            "span": 8,
+          }
+        }
+        name="challenge-from"
+        onFinish={[Function]}
+        validateMessages={
+          Object {
+            "required": "\${label} is required!",
+          }
+        }
+        wrapperCol={
+          Object {
+            "span": 20,
+          }
+        }
+      >
+        <FormItem
+          label="Title"
+          name={
+            Array [
+              "challengeData",
+              "title",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "message": "Please confirm your password!",
+                "required": true,
+              },
+              Object {
+                "validator": [Function],
+              },
+            ]
+          }
+        >
+          <Input
+            autoComplete="off"
+            placeholder="Enter title"
+            type="text"
+          />
+        </FormItem>
+        <FormItem
+          label="Tag"
+          name={
+            Array [
+              "challengeData",
+              "tag",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "required": true,
+              },
+            ]
+          }
+        >
+          <ForwardRef(InternalSelect)
+            allowClear={true}
+            placeholder="Select a tag"
+          >
+            <Option
+              key="Front end"
+              value="Front end"
+            >
+              Front end
+            </Option>
+            <Option
+              key="Back end"
+              value="Back end"
+            >
+              Back end
+            </Option>
+            <Option
+              key="Elastic"
+              value="Elastic"
+            >
+              Elastic
+            </Option>
+            <Option
+              key="Nodejs"
+              value="Nodejs"
+            >
+              Nodejs
+            </Option>
+            <Option
+              key="React"
+              value="React"
+            >
+              React
+            </Option>
+            <Option
+              key="Angular"
+              value="Angular"
+            >
+              Angular
+            </Option>
+          </ForwardRef(InternalSelect)>
+        </FormItem>
+        <FormItem
+          label="Description"
+          name={
+            Array [
+              "challengeData",
+              "description",
+            ]
+          }
+          rules={
+            Array [
+              Object {
+                "required": true,
+              },
+            ]
+          }
+        >
+          <ForwardRef
+            autoComplete="off"
+            placeholder="Enter description"
+          />
+        </FormItem>
+        <FormItem
+          wrapperCol={
+            Object {
+              "offset": 22,
+              "span": 20,
+            }
+          }
+        >
+          <Button
+            htmlType="submit"
+            type="primary"
+          >
+            Submit
+          </Button>
+        </FormItem>
+      </ForwardRef(InternalForm)>
+    </Col>
+  </Row>
+</div>
+`;

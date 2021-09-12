@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardPage component should render DashboardPage component correctly in "debug" mode 1`] = `
+<div
+  className="site-card-wrapper"
+>
+  <Row>
+    <Col
+      offset={2}
+      span={20}
+    >
+      <Divider
+        orientation="center"
+      >
+        Hackathon Challenges
+        <Divider
+          orientation="end"
+        />
+      </Divider>
+      <List
+        dataSource={Array []}
+        grid={
+          Object {
+            "column": 3,
+            "gutter": 10,
+          }
+        }
+        renderItem={[Function]}
+      >
+        <Skeleton
+          active={true}
+          avatar={true}
+          loading={true}
+          paragraph={true}
+          title={true}
+        />
+      </List>
+    </Col>
+  </Row>
+</div>
+`;
+
+exports[`DashboardPage component should render DashboardPage component correctly with no props 1`] = `
+<div
+  className="site-card-wrapper"
+>
+  <Row>
+    <Col
+      offset={2}
+      span={20}
+    >
+      <Divider
+        orientation="center"
+      >
+        Hackathon Challenges
+        <Divider
+          orientation="end"
+        />
+      </Divider>
+      <List
+        dataSource={Array []}
+        grid={
+          Object {
+            "column": 3,
+            "gutter": 10,
+          }
+        }
+        renderItem={[Function]}
+      >
+        <Skeleton
+          active={true}
+          avatar={true}
+          loading={true}
+          paragraph={true}
+          title={true}
+        />
+      </List>
+    </Col>
+  </Row>
+</div>
+`;

@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+ main{
+  min-height: 90vh
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +37,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header{
+  display: flex;
+  height: 8vh;
+  width: 100vw;
+  background-color: royalblue;
+}
+
+.footer{
+  margin-top: 5px;
+  padding: 5px;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render Footer correctly in "debug" mode 1`] = `
+<div
+  className="footer"
+>
+  footer
+</div>
+`;
+
+exports[`Footer should render Footer correctly with no props 1`] = `
+<div
+  className="footer"
+>
+  footer
+</div>
+`;

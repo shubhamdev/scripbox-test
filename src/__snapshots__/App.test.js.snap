@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render App component should render App component correctly in "debug" mode 1`] = `
+<Suspense
+  debug={true}
+  fallback="Loading"
+>
+  <PageContextProvider>
+    <lazy />
+  </PageContextProvider>
+</Suspense>
+`;
+
+exports[`Render App component should render App component correctly with no props 1`] = `
+<Suspense
+  fallback="Loading"
+>
+  <PageContextProvider>
+    <lazy />
+  </PageContextProvider>
+</Suspense>
+`;
+
+exports[`Render App component should render Routers component correctly in "debug" mode 1`] = `
+<Layout>
+  <Header>
+    <lazy />
+  </Header>
+  <Content
+    style={
+      Object {
+        "height": "100bh",
+      }
+    }
+  >
+    <Switch>
+      <PublicRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/"
+        restricted={false}
+      />
+      <PrivateRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/challenge"
+      />
+      <PrivateRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/dashboard"
+      />
+      <PublicRoute
+        path="*"
+      >
+        <NoMatch />
+      </PublicRoute>
+    </Switch>
+  </Content>
+</Layout>
+`;
+
+exports[`Render App component should render Routers component correctly with no props 1`] = `
+<Layout>
+  <Header>
+    <lazy />
+  </Header>
+  <Content
+    style={
+      Object {
+        "height": "100bh",
+      }
+    }
+  >
+    <Switch>
+      <PublicRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/"
+        restricted={false}
+      />
+      <PrivateRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/challenge"
+      />
+      <PrivateRoute
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+        exact={true}
+        path="/dashboard"
+      />
+      <PublicRoute
+        path="*"
+      >
+        <NoMatch />
+      </PublicRoute>
+    </Switch>
+  </Content>
+</Layout>
+`;

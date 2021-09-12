@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrivateRoutes should render PrivateRoutes correctly in "debug" mode 1`] = `
+<Route
+  debug={true}
+  render={[Function]}
+/>
+`;
+
+exports[`PrivateRoutes should render PrivateRoutes correctly with no props 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
