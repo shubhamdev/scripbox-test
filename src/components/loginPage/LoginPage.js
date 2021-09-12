@@ -17,10 +17,10 @@ const validateMessages = {
 
 function LoginPage(props) {
   const inputRef = useRef(null);
-  const [user, setUser] = useContext(PageContext);
+  const { user } = useContext(PageContext);
   const onFinish = (value) => {
     login(value);
-    setUser(value);
+    user[1](value);
     props.history.push("/dashboard");
   };
 

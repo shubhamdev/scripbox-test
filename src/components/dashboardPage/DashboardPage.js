@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {
   Button,
   Row,
@@ -20,13 +19,17 @@ import { readCollection, updateCollection } from "../../utils/api";
 import { isLogin } from "../../utils";
 
 function DashboardPage() {
+  // dashboard list from firebase
   const [dashboardList, setDashboardList] = useState([]);
+  // isLoading flag
   const [isLoading, setIsLoading] = useState(true);
-  const [sortOrder, setSortorder] = useState("Sort Order");
+  // Display test for sort order
+  const [sortOrder, setSortOrder] = useState("Sort Order");
+  // User details object
   const [loginUserName, setLoginUserName] = useState("");
 
-  const sortOrder1 = ({ key }) => {
-    setSortorder(key);
+  const sortDashboardData = ({ key }) => {
+    setSortOrder(key);
     switch (key) {
       case "date":
         {
@@ -48,22 +51,27 @@ function DashboardPage() {
   };
 
   useEffect(() => {
+    // Set login user details
     if (isLogin()) {
       setLoginUserName(JSON.parse(localStorage.getItem("jwt")));
+      // Load data from firebase API
+      readCollection("challenges")
+        .then((data) => {
+          setIsLoading(false);
+          setDashboardList(data);
+        })
+        .catch((error) => {
+          message.error(
+            "Something went wrong please try again. Error: " + error
+          );
+          setIsLoading(false);
+          setDashboardList([]);
+        });
     }
-    readCollection("challenges")
-      .then((data) => {
-        setIsLoading(false);
-        setDashboardList(data);
-      })
-      .catch((eror) => {
-        setIsLoading(false);
-        setDashboardList([]);
-      });
   }, []);
 
   const menu = () => (
-    <Menu onClick={sortOrder1}>
+    <Menu onClick={sortDashboardData}>
       <Menu.Item id="data" key="date">
         Date
       </Menu.Item>

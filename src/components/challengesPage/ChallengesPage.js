@@ -1,49 +1,59 @@
 import React, { useEffect, useState, useRef } from "react";
-
 import { Form, Input, Button, Select, Row, Col, message } from "antd";
 import { addToCollection, readCollection } from "../../utils/api";
 import { isLogin } from "../../utils";
 
 const { Option } = Select;
+
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 20 },
 };
 
-const validateMessages = {
-  required: "${label} is required!",
-};
+const tagList = [
+  "Front end",
+  "Back end",
+  "Elastic",
+  "Nodejs",
+  "React",
+  "Angular",
+];
 
 function ChallengesPage(props) {
   const inputRef = useRef(null);
+  // Challenge List data state
   const [challengeList, setChallengeList] = useState([]);
+  // LogIn user details
   const [loginUserName, setLoginUserName] = useState("");
+  // Antd form instance
   const [form] = Form.useForm();
-  const tagList = [
-    "Front end",
-    "Back end",
-    "Elastic",
-    "Nodejs",
-    "React",
-    "Angular",
-  ];
 
   useEffect(() => {
+    // Set Login user details
     if (isLogin()) {
       setLoginUserName(JSON.parse(localStorage.getItem("jwt")));
       inputRef.current.focus();
+      if (challengeList && challengeList.length === 0) {
+        readCollection("challenges")
+          .then((data) => {
+            setChallengeList(data);
+          })
+          .catch((error) => {
+            message.error(
+              "Something went wrong please try again. Error: " + error
+            );
+          });
+      }
     }
-    readCollection("challenges")
-      .then((data) => {
-        setChallengeList(data);
-      })
-      .catch((error) => {});
   }, []);
-  const onFinish = ({ challengeData }) => {
+
+  // Save challenge data
+  const saveChallenge = ({ challengeData }) => {
     challengeData.createdDate = new Date().toJSON();
     challengeData.createdBy = loginUserName.user.name;
     challengeData.upVote = [];
-    debugger;
+
+    // Call addToCollection API
     addToCollection(challengeData, "challenges")
       .then((data) => {
         const copy = [...challengeList];
@@ -70,8 +80,7 @@ function ChallengesPage(props) {
             {...layout}
             form={form}
             name="challenge-from"
-            onFinish={onFinish}
-            validateMessages={validateMessages}
+            onFinish={saveChallenge}
           >
             <Form.Item
               name={["challengeData", "title"]}
@@ -79,23 +88,27 @@ function ChallengesPage(props) {
               rules={[
                 {
                   required: true,
-                  message: "Please confirm your password!",
+                  message: "Title is required",
                 },
                 {
                   validator: (_, value) => {
-                    const data = challengeList.filter((item) => {
-                      if (item.title.toLowerCase() === value.toLowerCase()) {
-                        return item;
+                    if (value) {
+                      const data = challengeList.filter((item) => {
+                        if (item.title.toLowerCase() === value.toLowerCase()) {
+                          return item;
+                        }
+                      });
+                      if (data && data.length === 0) {
+                        return Promise.resolve();
                       }
-                    });
-                    if (data && data.length === 0) {
-                      return Promise.resolve();
+                      return Promise.reject(
+                        new Error(
+                          "This title is already present please try another title."
+                        )
+                      );
+                    } else {
+                      return Promise.reject(new Error(` `));
                     }
-                    return Promise.reject(
-                      new Error(
-                        "This title is already present please try another title."
-                      )
-                    );
                   },
                 },
               ]}
@@ -108,15 +121,10 @@ function ChallengesPage(props) {
             </Form.Item>
             <Form.Item
               name={["challengeData", "tag"]}
-              // name="gender"
               label="Tag"
-              rules={[{ required: true }]}
+              rules={[{ required: true, message: "Tag is required" }]}
             >
-              <Select
-                placeholder="Select a tag"
-                // onChange={onGenderChange}
-                allowClear
-              >
+              <Select placeholder="Select a tag" allowClear>
                 {tagList.map((item) => (
                   <Option value={item} key={item}>
                     {item}
@@ -127,7 +135,7 @@ function ChallengesPage(props) {
 
             <Form.Item
               name={["challengeData", "description"]}
-              rules={[{ required: true }]}
+              rules={[{ required: true, message: "Description is required" }]}
               label="Description"
             >
               <Input.TextArea

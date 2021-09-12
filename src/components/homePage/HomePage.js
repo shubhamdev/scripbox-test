@@ -5,26 +5,29 @@ import { logout, isLogin } from "../../utils";
 import { capitalizeFirstLetter } from "../../utils/service";
 import { PageContext } from "../../PageContextProvider";
 function Home() {
+  // Context api data
   const { user } = useContext(PageContext);
+  // router history object
   const history = useHistory();
-  const [isLogIn, setIsLogIn] = useState(false);
-  const [loginUserName, setLoginUserName] = useState(false);
+  // LogIn use details
+  const [loginUserName, setLoginUserName] = useState("");
   const signOut = () => {
     logout();
-    setIsLogIn(false);
+    user[1]("");
     history.push("/");
   };
   useEffect(() => {
-    const isValue = isLogin();
-    if (isValue) {
+    // Set logIn user details
+    if (isLogin()) {
       setLoginUserName(JSON.parse(localStorage.getItem("jwt")));
-      setIsLogIn(isValue);
+    } else {
+      setLoginUserName();
     }
   }, [user[0]]);
   return (
     <div>
       <Menu theme="light" mode="horizontal" defaultSelectedKeys={[]}>
-        {isLogIn ? (
+        {loginUserName && loginUserName.user && loginUserName.user.name ? (
           <React.Fragment>
             <Menu.Item key="2" onClick={signOut}>
               Sign out
